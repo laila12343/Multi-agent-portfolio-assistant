@@ -1,0 +1,123 @@
+# =============================================================
+#  portfolio-agents — réglages TECHNIQUES du système
+#  (les contraintes du client sont dans config/mandat.yaml)
+#  Hypothèses H1..H10 : voir docs/architecture.md
+# =============================================================
+
+project:
+  seed: 42
+  univers_file: data/universe_sp50.csv
+  portefeuille_actuel_file: data/portefeuille_actuel.csv
+  mandat_file: config/mandat.yaml
+  cache_dir: data/cache
+  rapports_dir: data/rapports            # documents pour le RAG (un dossier par ticker)
+
+# -------------------------------------------------------------
+# Données (H6, H8)
+# -------------------------------------------------------------
+donnees:
+  fournisseur: yfinance       # yfinance (prototype, usage personnel) | synthetic (hors-ligne)
+  historique_annees: 3        # H6 : prix quotidiens sur 3 ans ou plus
+  cache_ttl_heures: 24
+  actualites_par_titre: 8
+  actualites_age_max_jours: 30
+  liquidite_fenetre_jours: 60 # volume moyen en dollars sur cette fenêtre
+  repli_synthetique: false    # true : si le fournisseur échoue (après RetryPolicy), données synthétiques
+                              # false : l'erreur remonte (comportement « production »)
+
+# -------------------------------------------------------------
+# LLM open source (H7 : le LLM interprète, il ne calcule rien)
+#   backend : ollama | openai_compatible | hf | mock
+#     ollama            recommandé sur Colab : appels d'outils + sorties structurées
+#     openai_compatible serveur auto-hébergé (vLLM, LM Studio, llama.cpp…)
+#     hf                transformers local : pas d'appel d'outils, contexte pré-calculé
+#     mock              aucun modèle : règles déterministes (tests, démo instantanée)
+# -------------------------------------------------------------
+llm:
+  backend: ollama
+  rapide:                     # 3 analystes (beaucoup d'appels)
+    ollama: qwen2.5:3b
+    hf: Qwen/Qwen2.5-3B-Instruct
+    temperature: 0.1
+  fort:                       # débat, juge, explication du risque, rapport
+    ollama: qwen2.5:7b
+    hf: Qwen/Qwen2.5-7B-Instruct
+    temperature: 0.3
+  num_ctx: 16384              # contexte Ollama (défaut 2048 : trop court pour le débat)
+  ollama_host: http://localhost:11434
+
+# -------------------------------------------------------------
+# Étape 4 — analyse par titre (sous-graphe analyse_titre, via Send)
+# -------------------------------------------------------------
+analyse:
+  max_titres: 50              # titres envoyés aux analystes (réduire pour une démo LLM rapide)
+  max_concurrency: 4          # analyses en parallèle
+  poids_notes:                # agrégation des 3 notes (-2..+2) — à valider avec les gérants
+    fondamental: 0.40
+    valorisation: 0.30
+    sentiment: 0.30
+  recherche_web: auto         # auto (Tavily si TAVILY_API_KEY, sinon DuckDuckGo) | tavily | duckduckgo | off
+  rag_moteur: tfidf           # tfidf (scikit-learn) | hf (sentence-transformers)
+  rag_modele: sentence-transformers/all-MiniLM-L6-v2
+
+# -------------------------------------------------------------
+# Étape 5 — débat et sélection
+# -------------------------------------------------------------
+debat:
+  tours: 2                    # 2 tours max (haussier -> baissier, x2)
+  taille_min: 15              # liste restreinte : 15 à 30 titres
+  taille_max: 30
+
+# -------------------------------------------------------------
+# Étape 6 — optimisation (PyPortfolioOpt : Ledoit-Wolf + Black-Litterman + EfficientFrontier)
+#   a priori      : rendements implicites du marché  pi = delta * Sigma * w_mkt
+#   vue du titre i: Q_i = pi_i + kappa * score_i      (score -2..+2 décidé par le juge)
+#   confiance     : faible / moyenne / elevee -> méthode d'Idzorek
+# -------------------------------------------------------------
+optimisation:
+  kappa: 0.03                 # rendement excédentaire annuel par point de vue (+2 => +6 %)
+  delta: 2.5                  # aversion au risque implicite du marché (Black-Litterman)
+  tau: 0.05
+  confiance: {faible: 0.25, moyenne: 0.50, elevee: 0.75}
+  # stratégie par tentative (H9 : 3 tentatives, de plus en plus prudentes)
+  #   gamma_l2          pénalité de concentration
+  #   penalite_rotation coût par unité de rotation vs portefeuille actuel
+  tentatives:
+    - {objectif: max_sharpe, gamma_l2: 0.0, penalite_rotation: 0.0}
+    - {objectif: max_quadratic_utility, gamma_l2: 0.1, penalite_rotation: 0.02}
+    - {objectif: min_volatility, gamma_l2: 0.1, penalite_rotation: 0.10}
+
+# -------------------------------------------------------------
+# Étape 7 — contrôle des risques
+# -------------------------------------------------------------
+risque:
+  max_tentatives: 3           # H9 : puis escalade au gérant avec alerte
+  taux_sans_risque: 0.04      # annuel (FRED / Bank Al-Maghrib selon le marché)
+  var_niveau: 0.95
+  stress_tests:
+    krach_marche: {type: beta, choc_marche: -0.20}
+    choc_tech: {type: secteur, secteur: Information Technology, choc: -0.30}
+    pire_mois_historique: {type: historique, fenetre_jours: 21}
+
+# -------------------------------------------------------------
+# Observabilité (LangSmith) : actif si LANGSMITH_API_KEY est défini
+# -------------------------------------------------------------
+observabilite:
+  langsmith:
+    actif: auto               # auto (si clé présente) | true | false
+    projet: portfolio-agents
+    endpoint: https://api.smith.langchain.com   # https://eu.api.smith.langchain.com pour l'hébergement UE
+
+# -------------------------------------------------------------
+# Rapport
+# -------------------------------------------------------------
+rapport:
+  dossier: data/rapports_generes   # un fichier HTML autonome par cycle
+
+# -------------------------------------------------------------
+# Graphe
+# -------------------------------------------------------------
+graphe:
+  checkpointer: memory        # memory | sqlite | postgres (PostgresSaver en production)
+  sqlite_path: data/cache/checkpoints.sqlite
+  recursion_limit: 100

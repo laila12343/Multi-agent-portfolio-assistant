@@ -1,0 +1,37 @@
+# --- Orchestration (open source)
+langgraph>=1.0                      # StateGraph, Send, RetryPolicy, interrupt/Command, Store
+langgraph-checkpoint-sqlite>=2.0    # checkpointer persistant local (option)
+# langgraph-checkpoint-postgres     # PostgresSaver (production) + psycopg[binary]
+langchain>=1.0                      # create_agent
+langchain-core>=1.0
+langchain-ollama>=0.3               # LLM open source via Ollama (appels d'outils, sorties structurées)
+# langchain-openai                  # serveur compatible OpenAI auto-hébergé (vLLM, LM Studio…)
+# langchain-huggingface             # backend "hf" (transformers local)
+# langchain-tavily                  # recherche web Tavily (clé gratuite limitée)
+ddgs>=9.0                           # recherche web DuckDuckGo, sans clé
+
+# --- Données et calcul
+pandas>=2.0
+numpy>=1.26
+scipy>=1.11
+scikit-learn>=1.4                   # Ledoit-Wolf (repli), TF-IDF du RAG
+PyPortfolioOpt>=1.5.6               # Ledoit-Wolf, Black-Litterman, EfficientFrontier
+cvxpy>=1.4
+pyyaml>=6.0
+python-dotenv>=1.0
+requests>=2.31
+beautifulsoup4>=4.12
+pypdf>=4.0
+yfinance>=0.2.54                    # PROTOTYPE uniquement (usage personnel)
+feedparser>=6.0
+
+# --- Observabilité
+langsmith>=0.2                      # traces (offre Developer gratuite) ; actif si LANGSMITH_API_KEY
+
+# --- Interface, rapport, visualisation, tests
+streamlit>=1.38
+plotly>=5.20
+matplotlib>=3.8
+jinja2>=3.1                         # gabarit de la note d'investissement
+markdown>=3.5
+pytest>=8.0

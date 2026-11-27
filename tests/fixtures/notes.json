@@ -1,0 +1,1821 @@
+[
+ {
+  "ticker": "MRK",
+  "agent": "fondamental",
+  "score": 1,
+  "these": "ROE au percentile 66.0, marge nette au percentile 70.0, croissance du CA au percentile 80.0.",
+  "risques": [],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "MRK",
+  "agent": "sentiment",
+  "score": 1,
+  "these": "8 actualités : 2 positives, 1 négatives.",
+  "risques": [
+   "Analysts downgrade MRK on slowing growth and rising costs"
+  ],
+  "sources": [
+   "MRK announces date for quarterly earnings call",
+   "Analysts upgrade MRK citing robust demand and margin expansion",
+   "What to watch for MRK this week"
+  ]
+ },
+ {
+  "ticker": "MRK",
+  "agent": "valorisation",
+  "score": 0,
+  "these": "PER prévisionnel +4% vs médiane du secteur, EV/EBITDA -16%.",
+  "risques": [],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "DIS",
+  "agent": "fondamental",
+  "score": 1,
+  "these": "ROE au percentile 54.0, marge nette au percentile 16.0, croissance du CA au percentile 98.0.",
+  "risques": [],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "DIS",
+  "agent": "sentiment",
+  "score": 2,
+  "these": "8 actualités : 6 positives, 1 négatives.",
+  "risques": [
+   "DIS cuts outlook amid supply chain disruptions"
+  ],
+  "sources": [
+   "What to watch for DIS this week",
+   "Analysts upgrade DIS citing robust demand and margin expansion",
+   "DIS shares rally after strong quarterly revenue growth"
+  ]
+ },
+ {
+  "ticker": "DIS",
+  "agent": "valorisation",
+  "score": 0,
+  "these": "PER prévisionnel +186% vs médiane du secteur, EV/EBITDA +0%.",
+  "risques": [],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "KO",
+  "agent": "fondamental",
+  "score": 0,
+  "these": "ROE au percentile 18.0, marge nette au percentile 82.0, croissance du CA au percentile 50.0.",
+  "risques": [
+   "endettement élevé"
+  ],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "KO",
+  "agent": "sentiment",
+  "score": 1,
+  "these": "8 actualités : 3 positives, 2 négatives.",
+  "risques": [
+   "KO shares fall after regulators open investigation",
+   "Analysts downgrade KO on slowing growth and rising costs"
+  ],
+  "sources": [
+   "KO shares fall after regulators open investigation",
+   "KO shares rally after strong quarterly revenue growth",
+   "KO shares rally after strong quarterly revenue growth"
+  ]
+ },
+ {
+  "ticker": "KO",
+  "agent": "valorisation",
+  "score": 2,
+  "these": "PER prévisionnel -33% vs médiane du secteur, EV/EBITDA -46%.",
+  "risques": [],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "ABBV",
+  "agent": "fondamental",
+  "score": 0,
+  "these": "ROE au percentile 40.0, marge nette au percentile 56.0, croissance du CA au percentile 44.0.",
+  "risques": [
+   "endettement élevé"
+  ],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "ABBV",
+  "agent": "sentiment",
+  "score": 1,
+  "these": "8 actualités : 4 positives, 2 négatives.",
+  "risques": [
+   "ABBV cuts outlook amid supply chain disruptions",
+   "ABBV misses revenue estimates as demand weakens"
+  ],
+  "sources": [
+   "ABBV shares rally after strong quarterly revenue growth",
+   "What to watch for ABBV this week",
+   "ABBV cuts outlook amid supply chain disruptions"
+  ]
+ },
+ {
+  "ticker": "ABBV",
+  "agent": "valorisation",
+  "score": 2,
+  "these": "PER prévisionnel -53% vs médiane du secteur, EV/EBITDA -54%.",
+  "risques": [],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "DHR",
+  "agent": "fondamental",
+  "score": 2,
+  "these": "ROE au percentile 86.0, marge nette au percentile 98.0, croissance du CA au percentile 72.0.",
+  "risques": [],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "DHR",
+  "agent": "sentiment",
+  "score": 2,
+  "these": "8 actualités : 6 positives, 1 négatives.",
+  "risques": [
+   "Analysts downgrade DHR on slowing growth and rising costs"
+  ],
+  "sources": [
+   "DHR announces record buyback and dividend increase",
+   "DHR shares rally after strong quarterly revenue growth",
+   "Analysts upgrade DHR citing robust demand and margin expansion"
+  ]
+ },
+ {
+  "ticker": "DHR",
+  "agent": "valorisation",
+  "score": 1,
+  "these": "PER prévisionnel -26% vs médiane du secteur, EV/EBITDA +20%.",
+  "risques": [],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "META",
+  "agent": "fondamental",
+  "score": 1,
+  "these": "ROE au percentile 82.0, marge nette au percentile 28.0, croissance du CA au percentile 78.0.",
+  "risques": [],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "META",
+  "agent": "sentiment",
+  "score": 0,
+  "these": "8 actualités : 2 positives, 3 négatives.",
+  "risques": [
+   "Analysts downgrade META on slowing growth and rising costs",
+   "META shares fall after regulators open investigation"
+  ],
+  "sources": [
+   "Analysts downgrade META on slowing growth and rising costs",
+   "META shares rally after strong quarterly revenue growth",
+   "META to present at upcoming industry conference"
+  ]
+ },
+ {
+  "ticker": "META",
+  "agent": "valorisation",
+  "score": 0,
+  "these": "PER prévisionnel -0% vs médiane du secteur, EV/EBITDA +44%.",
+  "risques": [],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "BRK-B",
+  "agent": "fondamental",
+  "score": -1,
+  "these": "ROE au percentile 10.0, marge nette au percentile 54.0, croissance du CA au percentile 52.0.",
+  "risques": [
+   "endettement élevé"
+  ],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "BRK-B",
+  "agent": "sentiment",
+  "score": 1,
+  "these": "8 actualités : 4 positives, 1 négatives.",
+  "risques": [
+   "BRK-B cuts outlook amid supply chain disruptions"
+  ],
+  "sources": [
+   "BRK-B announces date for quarterly earnings call",
+   "BRK-B cuts outlook amid supply chain disruptions",
+   "BRK-B to present at upcoming industry conference"
+  ]
+ },
+ {
+  "ticker": "BRK-B",
+  "agent": "valorisation",
+  "score": 2,
+  "these": "PER prévisionnel -39% vs médiane du secteur, EV/EBITDA -44%.",
+  "risques": [],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "VZ",
+  "agent": "fondamental",
+  "score": 1,
+  "these": "ROE au percentile 22.0, marge nette au percentile 68.0, croissance du CA au percentile 96.0.",
+  "risques": [],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "VZ",
+  "agent": "sentiment",
+  "score": 1,
+  "these": "8 actualités : 3 positives, 2 négatives.",
+  "risques": [
+   "Analysts downgrade VZ on slowing growth and rising costs",
+   "VZ shares fall after regulators open investigation"
+  ],
+  "sources": [
+   "VZ announces record buyback and dividend increase",
+   "VZ announces date for quarterly earnings call",
+   "VZ beats earnings expectations, raises full-year guidance"
+  ]
+ },
+ {
+  "ticker": "VZ",
+  "agent": "valorisation",
+  "score": -1,
+  "these": "PER prévisionnel +0% vs médiane du secteur, EV/EBITDA +147%.",
+  "risques": [
+   "prime de valorisation"
+  ],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "MSFT",
+  "agent": "fondamental",
+  "score": 0,
+  "these": "ROE au percentile 76.0, marge nette au percentile 4.0, croissance du CA au percentile 70.0.",
+  "risques": [
+   "endettement élevé"
+  ],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "MSFT",
+  "agent": "sentiment",
+  "score": 1,
+  "these": "8 actualités : 4 positives, 2 négatives.",
+  "risques": [
+   "MSFT shares fall after regulators open investigation",
+   "MSFT misses revenue estimates as demand weakens"
+  ],
+  "sources": [
+   "MSFT to present at upcoming industry conference",
+   "What to watch for MSFT this week",
+   "MSFT shares fall after regulators open investigation"
+  ]
+ },
+ {
+  "ticker": "MSFT",
+  "agent": "valorisation",
+  "score": 0,
+  "these": "PER prévisionnel +10% vs médiane du secteur, EV/EBITDA -7%.",
+  "risques": [],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "TMO",
+  "agent": "fondamental",
+  "score": 0,
+  "these": "ROE au percentile 88.0, marge nette au percentile 40.0, croissance du CA au percentile 24.0.",
+  "risques": [
+   "endettement élevé"
+  ],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "TMO",
+  "agent": "sentiment",
+  "score": 1,
+  "these": "8 actualités : 4 positives, 1 négatives.",
+  "risques": [
+   "Analysts downgrade TMO on slowing growth and rising costs"
+  ],
+  "sources": [
+   "Analysts downgrade TMO on slowing growth and rising costs",
+   "What to watch for TMO this week",
+   "TMO beats earnings expectations, raises full-year guidance"
+  ]
+ },
+ {
+  "ticker": "TMO",
+  "agent": "valorisation",
+  "score": 0,
+  "these": "PER prévisionnel -10% vs médiane du secteur, EV/EBITDA -0%.",
+  "risques": [],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "QCOM",
+  "agent": "fondamental",
+  "score": -1,
+  "these": "ROE au percentile 24.0, marge nette au percentile 44.0, croissance du CA au percentile 30.0.",
+  "risques": [
+   "endettement élevé"
+  ],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "QCOM",
+  "agent": "sentiment",
+  "score": 1,
+  "these": "8 actualités : 4 positives, 1 négatives.",
+  "risques": [
+   "Analysts downgrade QCOM on slowing growth and rising costs"
+  ],
+  "sources": [
+   "QCOM shares rally after strong quarterly revenue growth",
+   "QCOM to present at upcoming industry conference",
+   "QCOM to present at upcoming industry conference"
+  ]
+ },
+ {
+  "ticker": "QCOM",
+  "agent": "valorisation",
+  "score": 2,
+  "these": "PER prévisionnel -45% vs médiane du secteur, EV/EBITDA -42%.",
+  "risques": [],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "NFLX",
+  "agent": "fondamental",
+  "score": 1,
+  "these": "ROE au percentile 42.0, marge nette au percentile 52.0, croissance du CA au percentile 62.0.",
+  "risques": [
+   "endettement élevé"
+  ],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "NFLX",
+  "agent": "sentiment",
+  "score": -1,
+  "these": "8 actualités : 2 positives, 5 négatives.",
+  "risques": [
+   "NFLX misses revenue estimates as demand weakens",
+   "NFLX misses revenue estimates as demand weakens"
+  ],
+  "sources": [
+   "NFLX misses revenue estimates as demand weakens",
+   "NFLX misses revenue estimates as demand weakens",
+   "NFLX beats earnings expectations, raises full-year guidance"
+  ]
+ },
+ {
+  "ticker": "NFLX",
+  "agent": "valorisation",
+  "score": 1,
+  "these": "PER prévisionnel -23% vs médiane du secteur, EV/EBITDA -36%.",
+  "risques": [],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "INTU",
+  "agent": "fondamental",
+  "score": 1,
+  "these": "ROE au percentile 68.0, marge nette au percentile 2.0, croissance du CA au percentile 94.0.",
+  "risques": [
+   "endettement élevé"
+  ],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "INTU",
+  "agent": "sentiment",
+  "score": 1,
+  "these": "8 actualités : 5 positives, 3 négatives.",
+  "risques": [
+   "INTU shares fall after regulators open investigation",
+   "INTU cuts outlook amid supply chain disruptions"
+  ],
+  "sources": [
+   "Analysts upgrade INTU citing robust demand and margin expansion",
+   "INTU shares rally after strong quarterly revenue growth",
+   "INTU shares fall after regulators open investigation"
+  ]
+ },
+ {
+  "ticker": "INTU",
+  "agent": "valorisation",
+  "score": 0,
+  "these": "PER prévisionnel -29% vs médiane du secteur, EV/EBITDA +30%.",
+  "risques": [],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "WFC",
+  "agent": "fondamental",
+  "score": 0,
+  "these": "ROE au percentile 12.0, marge nette au percentile 86.0, croissance du CA au percentile 84.0.",
+  "risques": [
+   "endettement élevé"
+  ],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "WFC",
+  "agent": "sentiment",
+  "score": 1,
+  "these": "8 actualités : 5 positives, 2 négatives.",
+  "risques": [
+   "WFC misses revenue estimates as demand weakens",
+   "Analysts downgrade WFC on slowing growth and rising costs"
+  ],
+  "sources": [
+   "WFC misses revenue estimates as demand weakens",
+   "WFC to present at upcoming industry conference",
+   "WFC beats earnings expectations, raises full-year guidance"
+  ]
+ },
+ {
+  "ticker": "WFC",
+  "agent": "valorisation",
+  "score": -1,
+  "these": "PER prévisionnel +13% vs médiane du secteur, EV/EBITDA +53%.",
+  "risques": [
+   "prime de valorisation"
+  ],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "PG",
+  "agent": "fondamental",
+  "score": 1,
+  "these": "ROE au percentile 96.0, marge nette au percentile 20.0, croissance du CA au percentile 88.0.",
+  "risques": [],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "PG",
+  "agent": "sentiment",
+  "score": 1,
+  "these": "8 actualités : 5 positives, 1 négatives.",
+  "risques": [
+   "PG misses revenue estimates as demand weakens"
+  ],
+  "sources": [
+   "PG to present at upcoming industry conference",
+   "Analysts upgrade PG citing robust demand and margin expansion",
+   "PG misses revenue estimates as demand weakens"
+  ]
+ },
+ {
+  "ticker": "PG",
+  "agent": "valorisation",
+  "score": -1,
+  "these": "PER prévisionnel +0% vs médiane du secteur, EV/EBITDA +103%.",
+  "risques": [
+   "prime de valorisation"
+  ],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "NKE",
+  "agent": "fondamental",
+  "score": 1,
+  "these": "ROE au percentile 64.0, marge nette au percentile 84.0, croissance du CA au percentile 76.0.",
+  "risques": [],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "NKE",
+  "agent": "sentiment",
+  "score": -1,
+  "these": "8 actualités : 2 positives, 4 négatives.",
+  "risques": [
+   "NKE misses revenue estimates as demand weakens",
+   "NKE cuts outlook amid supply chain disruptions"
+  ],
+  "sources": [
+   "NKE announces date for quarterly earnings call",
+   "NKE beats earnings expectations, raises full-year guidance",
+   "NKE misses revenue estimates as demand weakens"
+  ]
+ },
+ {
+  "ticker": "NKE",
+  "agent": "valorisation",
+  "score": 0,
+  "these": "PER prévisionnel +2% vs médiane du secteur, EV/EBITDA -9%.",
+  "risques": [],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "MCD",
+  "agent": "fondamental",
+  "score": 1,
+  "these": "ROE au percentile 70.0, marge nette au percentile 94.0, croissance du CA au percentile 58.0.",
+  "risques": [
+   "endettement élevé"
+  ],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "MCD",
+  "agent": "sentiment",
+  "score": -2,
+  "these": "8 actualités : 0 positives, 7 négatives.",
+  "risques": [
+   "MCD shares fall after regulators open investigation",
+   "MCD misses revenue estimates as demand weakens"
+  ],
+  "sources": [
+   "MCD shares fall after regulators open investigation",
+   "MCD misses revenue estimates as demand weakens",
+   "MCD shares fall after regulators open investigation"
+  ]
+ },
+ {
+  "ticker": "MCD",
+  "agent": "valorisation",
+  "score": 1,
+  "these": "PER prévisionnel -38% vs médiane du secteur, EV/EBITDA +8%.",
+  "risques": [],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "LLY",
+  "agent": "fondamental",
+  "score": 1,
+  "these": "ROE au percentile 60.0, marge nette au percentile 42.0, croissance du CA au percentile 86.0.",
+  "risques": [
+   "endettement élevé"
+  ],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "LLY",
+  "agent": "sentiment",
+  "score": -1,
+  "these": "8 actualités : 1 positives, 4 négatives.",
+  "risques": [
+   "LLY shares fall after regulators open investigation",
+   "LLY shares fall after regulators open investigation"
+  ],
+  "sources": [
+   "LLY announces date for quarterly earnings call",
+   "LLY shares fall after regulators open investigation",
+   "LLY announces record buyback and dividend increase"
+  ]
+ },
+ {
+  "ticker": "LLY",
+  "agent": "valorisation",
+  "score": 0,
+  "these": "PER prévisionnel +7% vs médiane du secteur, EV/EBITDA +22%.",
+  "risques": [],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "PFE",
+  "agent": "fondamental",
+  "score": 0,
+  "these": "ROE au percentile 0.0, marge nette au percentile 8.0, croissance du CA au percentile 82.0.",
+  "risques": [
+   "endettement élevé"
+  ],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "PFE",
+  "agent": "sentiment",
+  "score": 0,
+  "these": "8 actualités : 2 positives, 4 négatives.",
+  "risques": [
+   "Analysts downgrade PFE on slowing growth and rising costs",
+   "PFE misses revenue estimates as demand weakens"
+  ],
+  "sources": [
+   "Analysts downgrade PFE on slowing growth and rising costs",
+   "PFE misses revenue estimates as demand weakens",
+   "PFE misses revenue estimates as demand weakens"
+  ]
+ },
+ {
+  "ticker": "PFE",
+  "agent": "valorisation",
+  "score": 1,
+  "these": "PER prévisionnel -4% vs médiane du secteur, EV/EBITDA -18%.",
+  "risques": [],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "CRM",
+  "agent": "fondamental",
+  "score": 0,
+  "these": "ROE au percentile 20.0, marge nette au percentile 62.0, croissance du CA au percentile 46.0.",
+  "risques": [],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "CRM",
+  "agent": "sentiment",
+  "score": -1,
+  "these": "8 actualités : 1 positives, 4 négatives.",
+  "risques": [
+   "CRM shares fall after regulators open investigation",
+   "CRM shares fall after regulators open investigation"
+  ],
+  "sources": [
+   "What to watch for CRM this week",
+   "CRM shares fall after regulators open investigation",
+   "What to watch for CRM this week"
+  ]
+ },
+ {
+  "ticker": "CRM",
+  "agent": "valorisation",
+  "score": 2,
+  "these": "PER prévisionnel -23% vs médiane du secteur, EV/EBITDA -50%.",
+  "risques": [],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "GOOGL",
+  "agent": "fondamental",
+  "score": 1,
+  "these": "ROE au percentile 52.0, marge nette au percentile 80.0, croissance du CA au percentile 54.0.",
+  "risques": [],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "GOOGL",
+  "agent": "sentiment",
+  "score": 0,
+  "these": "8 actualités : 3 positives, 2 négatives.",
+  "risques": [
+   "GOOGL cuts outlook amid supply chain disruptions",
+   "GOOGL shares fall after regulators open investigation"
+  ],
+  "sources": [
+   "GOOGL cuts outlook amid supply chain disruptions",
+   "What to watch for GOOGL this week",
+   "GOOGL to present at upcoming industry conference"
+  ]
+ },
+ {
+  "ticker": "GOOGL",
+  "agent": "valorisation",
+  "score": -1,
+  "these": "PER prévisionnel +208% vs médiane du secteur, EV/EBITDA -11%.",
+  "risques": [],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "AMD",
+  "agent": "fondamental",
+  "score": 1,
+  "these": "ROE au percentile 92.0, marge nette au percentile 22.0, croissance du CA au percentile 64.0.",
+  "risques": [],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "AMD",
+  "agent": "sentiment",
+  "score": -1,
+  "these": "8 actualités : 1 positives, 3 négatives.",
+  "risques": [
+   "AMD misses revenue estimates as demand weakens",
+   "AMD misses revenue estimates as demand weakens"
+  ],
+  "sources": [
+   "AMD announces date for quarterly earnings call",
+   "AMD misses revenue estimates as demand weakens",
+   "Analysts upgrade AMD citing robust demand and margin expansion"
+  ]
+ },
+ {
+  "ticker": "AMD",
+  "agent": "valorisation",
+  "score": 0,
+  "these": "PER prévisionnel -48% vs médiane du secteur, EV/EBITDA +70%.",
+  "risques": [],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "BAC",
+  "agent": "fondamental",
+  "score": 0,
+  "these": "ROE au percentile 84.0, marge nette au percentile 66.0, croissance du CA au percentile 18.0.",
+  "risques": [],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "BAC",
+  "agent": "sentiment",
+  "score": 0,
+  "these": "8 actualités : 3 positives, 3 négatives.",
+  "risques": [
+   "BAC misses revenue estimates as demand weakens",
+   "BAC misses revenue estimates as demand weakens"
+  ],
+  "sources": [
+   "BAC announces record buyback and dividend increase",
+   "BAC announces date for quarterly earnings call",
+   "BAC misses revenue estimates as demand weakens"
+  ]
+ },
+ {
+  "ticker": "BAC",
+  "agent": "valorisation",
+  "score": 1,
+  "these": "PER prévisionnel -13% vs médiane du secteur, EV/EBITDA -42%.",
+  "risques": [],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "AMGN",
+  "agent": "fondamental",
+  "score": 0,
+  "these": "ROE au percentile 72.0, marge nette au percentile 18.0, croissance du CA au percentile 74.0.",
+  "risques": [
+   "endettement élevé"
+  ],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "AMGN",
+  "agent": "sentiment",
+  "score": 1,
+  "these": "8 actualités : 4 positives, 3 négatives.",
+  "risques": [
+   "Analysts downgrade AMGN on slowing growth and rising costs",
+   "AMGN shares fall after regulators open investigation"
+  ],
+  "sources": [
+   "AMGN announces record buyback and dividend increase",
+   "Analysts downgrade AMGN on slowing growth and rising costs",
+   "AMGN announces record buyback and dividend increase"
+  ]
+ },
+ {
+  "ticker": "AMGN",
+  "agent": "valorisation",
+  "score": -1,
+  "these": "PER prévisionnel -30% vs médiane du secteur, EV/EBITDA +109%.",
+  "risques": [],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "CAT",
+  "agent": "fondamental",
+  "score": 1,
+  "these": "ROE au percentile 98.0, marge nette au percentile 38.0, croissance du CA au percentile 56.0.",
+  "risques": [],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "CAT",
+  "agent": "sentiment",
+  "score": 0,
+  "these": "8 actualités : 4 positives, 4 négatives.",
+  "risques": [
+   "CAT misses revenue estimates as demand weakens",
+   "CAT cuts outlook amid supply chain disruptions"
+  ],
+  "sources": [
+   "CAT misses revenue estimates as demand weakens",
+   "CAT shares rally after strong quarterly revenue growth",
+   "CAT beats earnings expectations, raises full-year guidance"
+  ]
+ },
+ {
+  "ticker": "CAT",
+  "agent": "valorisation",
+  "score": 0,
+  "these": "PER prévisionnel +39% vs médiane du secteur, EV/EBITDA +25%.",
+  "risques": [],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "COST",
+  "agent": "fondamental",
+  "score": 0,
+  "these": "ROE au percentile 56.0, marge nette au percentile 50.0, croissance du CA au percentile 38.0.",
+  "risques": [],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "COST",
+  "agent": "sentiment",
+  "score": 0,
+  "these": "8 actualités : 1 positives, 3 négatives.",
+  "risques": [
+   "Analysts downgrade COST on slowing growth and rising costs",
+   "COST cuts outlook amid supply chain disruptions"
+  ],
+  "sources": [
+   "What to watch for COST this week",
+   "Analysts downgrade COST on slowing growth and rising costs",
+   "COST cuts outlook amid supply chain disruptions"
+  ]
+ },
+ {
+  "ticker": "COST",
+  "agent": "valorisation",
+  "score": -2,
+  "these": "PER prévisionnel +22% vs médiane du secteur, EV/EBITDA +47%.",
+  "risques": [
+   "prime de valorisation"
+  ],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "PEP",
+  "agent": "fondamental",
+  "score": 1,
+  "these": "ROE au percentile 28.0, marge nette au percentile 90.0, croissance du CA au percentile 60.0.",
+  "risques": [],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "PEP",
+  "agent": "sentiment",
+  "score": -2,
+  "these": "8 actualités : 1 positives, 6 négatives.",
+  "risques": [
+   "PEP misses revenue estimates as demand weakens",
+   "PEP misses revenue estimates as demand weakens"
+  ],
+  "sources": [
+   "PEP misses revenue estimates as demand weakens",
+   "PEP misses revenue estimates as demand weakens",
+   "PEP shares rally after strong quarterly revenue growth"
+  ]
+ },
+ {
+  "ticker": "PEP",
+  "agent": "valorisation",
+  "score": 0,
+  "these": "PER prévisionnel +0% vs médiane du secteur, EV/EBITDA -31%.",
+  "risques": [],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "CSCO",
+  "agent": "fondamental",
+  "score": -1,
+  "these": "ROE au percentile 16.0, marge nette au percentile 88.0, croissance du CA au percentile 12.0.",
+  "risques": [],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "CSCO",
+  "agent": "sentiment",
+  "score": 0,
+  "these": "8 actualités : 2 positives, 4 négatives.",
+  "risques": [
+   "Analysts downgrade CSCO on slowing growth and rising costs",
+   "Analysts downgrade CSCO on slowing growth and rising costs"
+  ],
+  "sources": [
+   "Analysts downgrade CSCO on slowing growth and rising costs",
+   "CSCO shares rally after strong quarterly revenue growth",
+   "Analysts downgrade CSCO on slowing growth and rising costs"
+  ]
+ },
+ {
+  "ticker": "CSCO",
+  "agent": "valorisation",
+  "score": 1,
+  "these": "PER prévisionnel -41% vs médiane du secteur, EV/EBITDA +0%.",
+  "risques": [],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "HD",
+  "agent": "fondamental",
+  "score": 0,
+  "these": "ROE au percentile 50.0, marge nette au percentile 48.0, croissance du CA au percentile 66.0.",
+  "risques": [
+   "endettement élevé"
+  ],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "HD",
+  "agent": "sentiment",
+  "score": 1,
+  "these": "8 actualités : 5 positives, 2 négatives.",
+  "risques": [
+   "HD shares fall after regulators open investigation",
+   "HD shares fall after regulators open investigation"
+  ],
+  "sources": [
+   "HD shares fall after regulators open investigation",
+   "HD shares rally after strong quarterly revenue growth",
+   "HD beats earnings expectations, raises full-year guidance"
+  ]
+ },
+ {
+  "ticker": "HD",
+  "agent": "valorisation",
+  "score": 1,
+  "these": "PER prévisionnel +0% vs médiane du secteur, EV/EBITDA -29%.",
+  "risques": [],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "TSLA",
+  "agent": "fondamental",
+  "score": -1,
+  "these": "ROE au percentile 90.0, marge nette au percentile 74.0, croissance du CA au percentile 6.0.",
+  "risques": [
+   "endettement élevé"
+  ],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "TSLA",
+  "agent": "sentiment",
+  "score": 1,
+  "these": "8 actualités : 5 positives, 1 négatives.",
+  "risques": [
+   "TSLA shares fall after regulators open investigation"
+  ],
+  "sources": [
+   "TSLA beats earnings expectations, raises full-year guidance",
+   "TSLA shares fall after regulators open investigation",
+   "TSLA shares rally after strong quarterly revenue growth"
+  ]
+ },
+ {
+  "ticker": "TSLA",
+  "agent": "valorisation",
+  "score": 0,
+  "these": "PER prévisionnel -11% vs médiane du secteur, EV/EBITDA +0%.",
+  "risques": [],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "V",
+  "agent": "fondamental",
+  "score": -1,
+  "these": "ROE au percentile 2.0, marge nette au percentile 64.0, croissance du CA au percentile 48.0.",
+  "risques": [
+   "endettement élevé"
+  ],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "V",
+  "agent": "sentiment",
+  "score": 0,
+  "these": "8 actualités : 2 positives, 1 négatives.",
+  "risques": [
+   "V shares fall after regulators open investigation"
+  ],
+  "sources": [
+   "V announces date for quarterly earnings call",
+   "V to present at upcoming industry conference",
+   "V announces date for quarterly earnings call"
+  ]
+ },
+ {
+  "ticker": "V",
+  "agent": "valorisation",
+  "score": 1,
+  "these": "PER prévisionnel -60% vs médiane du secteur, EV/EBITDA +3%.",
+  "risques": [],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "MA",
+  "agent": "fondamental",
+  "score": 0,
+  "these": "ROE au percentile 44.0, marge nette au percentile 24.0, croissance du CA au percentile 68.0.",
+  "risques": [
+   "endettement élevé"
+  ],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "MA",
+  "agent": "sentiment",
+  "score": 0,
+  "these": "8 actualités : 3 positives, 4 négatives.",
+  "risques": [
+   "MA shares fall after regulators open investigation",
+   "MA shares fall after regulators open investigation"
+  ],
+  "sources": [
+   "MA shares fall after regulators open investigation",
+   "MA shares rally after strong quarterly revenue growth",
+   "MA announces date for quarterly earnings call"
+  ]
+ },
+ {
+  "ticker": "MA",
+  "agent": "valorisation",
+  "score": -2,
+  "these": "PER prévisionnel +34% vs médiane du secteur, EV/EBITDA +62%.",
+  "risques": [
+   "prime de valorisation"
+  ],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "NVDA",
+  "agent": "fondamental",
+  "score": 0,
+  "these": "ROE au percentile 62.0, marge nette au percentile 60.0, croissance du CA au percentile 34.0.",
+  "risques": [
+   "endettement élevé"
+  ],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "NVDA",
+  "agent": "sentiment",
+  "score": 1,
+  "these": "8 actualités : 4 positives, 1 négatives.",
+  "risques": [
+   "Analysts downgrade NVDA on slowing growth and rising costs"
+  ],
+  "sources": [
+   "NVDA beats earnings expectations, raises full-year guidance",
+   "Analysts upgrade NVDA citing robust demand and margin expansion",
+   "NVDA announces record buyback and dividend increase"
+  ]
+ },
+ {
+  "ticker": "NVDA",
+  "agent": "valorisation",
+  "score": 0,
+  "these": "PER prévisionnel +0% vs médiane du secteur, EV/EBITDA -10%.",
+  "risques": [],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "AAPL",
+  "agent": "fondamental",
+  "score": -1,
+  "these": "ROE au percentile 30.0, marge nette au percentile 36.0, croissance du CA au percentile 42.0.",
+  "risques": [
+   "endettement élevé"
+  ],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "AAPL",
+  "agent": "sentiment",
+  "score": -1,
+  "these": "8 actualités : 1 positives, 4 négatives.",
+  "risques": [
+   "AAPL misses revenue estimates as demand weakens",
+   "AAPL shares fall after regulators open investigation"
+  ],
+  "sources": [
+   "AAPL announces date for quarterly earnings call",
+   "AAPL beats earnings expectations, raises full-year guidance",
+   "AAPL to present at upcoming industry conference"
+  ]
+ },
+ {
+  "ticker": "AAPL",
+  "agent": "valorisation",
+  "score": -1,
+  "these": "PER prévisionnel -0% vs médiane du secteur, EV/EBITDA +42%.",
+  "risques": [],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "CVX",
+  "agent": "fondamental",
+  "score": -1,
+  "these": "ROE au percentile 94.0, marge nette au percentile 78.0, croissance du CA au percentile 8.0.",
+  "risques": [
+   "endettement élevé"
+  ],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "CVX",
+  "agent": "sentiment",
+  "score": 1,
+  "these": "8 actualités : 4 positives, 2 négatives.",
+  "risques": [
+   "CVX shares fall after regulators open investigation",
+   "Analysts downgrade CVX on slowing growth and rising costs"
+  ],
+  "sources": [
+   "What to watch for CVX this week",
+   "CVX beats earnings expectations, raises full-year guidance",
+   "CVX beats earnings expectations, raises full-year guidance"
+  ]
+ },
+ {
+  "ticker": "CVX",
+  "agent": "valorisation",
+  "score": 0,
+  "these": "PER prévisionnel -1% vs médiane du secteur, EV/EBITDA -57%.",
+  "risques": [],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "ADBE",
+  "agent": "fondamental",
+  "score": 1,
+  "these": "ROE au percentile 4.0, marge nette au percentile 76.0, croissance du CA au percentile 92.0.",
+  "risques": [
+   "endettement élevé"
+  ],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "ADBE",
+  "agent": "sentiment",
+  "score": 0,
+  "these": "8 actualités : 4 positives, 4 négatives.",
+  "risques": [
+   "ADBE shares fall after regulators open investigation",
+   "ADBE misses revenue estimates as demand weakens"
+  ],
+  "sources": [
+   "ADBE beats earnings expectations, raises full-year guidance",
+   "Analysts upgrade ADBE citing robust demand and margin expansion",
+   "ADBE announces record buyback and dividend increase"
+  ]
+ },
+ {
+  "ticker": "ADBE",
+  "agent": "valorisation",
+  "score": -1,
+  "these": "PER prévisionnel +8% vs médiane du secteur, EV/EBITDA +66%.",
+  "risques": [
+   "prime de valorisation"
+  ],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "JNJ",
+  "agent": "fondamental",
+  "score": -2,
+  "these": "ROE au percentile 32.0, marge nette au percentile 0.0, croissance du CA au percentile 20.0.",
+  "risques": [
+   "endettement élevé"
+  ],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "JNJ",
+  "agent": "sentiment",
+  "score": 0,
+  "these": "8 actualités : 3 positives, 4 négatives.",
+  "risques": [
+   "JNJ misses revenue estimates as demand weakens",
+   "JNJ shares fall after regulators open investigation"
+  ],
+  "sources": [
+   "JNJ misses revenue estimates as demand weakens",
+   "Analysts upgrade JNJ citing robust demand and margin expansion",
+   "JNJ shares fall after regulators open investigation"
+  ]
+ },
+ {
+  "ticker": "JNJ",
+  "agent": "valorisation",
+  "score": 0,
+  "these": "PER prévisionnel +14% vs médiane du secteur, EV/EBITDA +0%.",
+  "risques": [],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "WMT",
+  "agent": "fondamental",
+  "score": -1,
+  "these": "ROE au percentile 74.0, marge nette au percentile 10.0, croissance du CA au percentile 2.0.",
+  "risques": [
+   "endettement élevé"
+  ],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "WMT",
+  "agent": "sentiment",
+  "score": 1,
+  "these": "8 actualités : 3 positives, 1 négatives.",
+  "risques": [
+   "WMT shares fall after regulators open investigation"
+  ],
+  "sources": [
+   "What to watch for WMT this week",
+   "WMT to present at upcoming industry conference",
+   "What to watch for WMT this week"
+  ]
+ },
+ {
+  "ticker": "WMT",
+  "agent": "valorisation",
+  "score": 0,
+  "these": "PER prévisionnel -10% vs médiane du secteur, EV/EBITDA +0%.",
+  "risques": [],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "ORCL",
+  "agent": "fondamental",
+  "score": 0,
+  "these": "ROE au percentile 80.0, marge nette au percentile 30.0, croissance du CA au percentile 16.0.",
+  "risques": [],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "ORCL",
+  "agent": "sentiment",
+  "score": 1,
+  "these": "8 actualités : 4 positives, 1 négatives.",
+  "risques": [
+   "ORCL misses revenue estimates as demand weakens"
+  ],
+  "sources": [
+   "ORCL announces date for quarterly earnings call",
+   "ORCL shares rally after strong quarterly revenue growth",
+   "ORCL announces record buyback and dividend increase"
+  ]
+ },
+ {
+  "ticker": "ORCL",
+  "agent": "valorisation",
+  "score": -1,
+  "these": "PER prévisionnel +48% vs médiane du secteur, EV/EBITDA -7%.",
+  "risques": [
+   "prime de valorisation"
+  ],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "JPM",
+  "agent": "fondamental",
+  "score": -1,
+  "these": "ROE au percentile 46.0, marge nette au percentile 96.0, croissance du CA au percentile 0.0.",
+  "risques": [
+   "endettement élevé"
+  ],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "JPM",
+  "agent": "sentiment",
+  "score": 1,
+  "these": "8 actualités : 3 positives, 2 négatives.",
+  "risques": [
+   "Analysts downgrade JPM on slowing growth and rising costs",
+   "Analysts downgrade JPM on slowing growth and rising costs"
+  ],
+  "sources": [
+   "JPM announces date for quarterly earnings call",
+   "JPM announces record buyback and dividend increase",
+   "JPM shares rally after strong quarterly revenue growth"
+  ]
+ },
+ {
+  "ticker": "JPM",
+  "agent": "valorisation",
+  "score": -1,
+  "these": "PER prévisionnel +73% vs médiane du secteur, EV/EBITDA -3%.",
+  "risques": [
+   "prime de valorisation"
+  ],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "ACN",
+  "agent": "fondamental",
+  "score": 0,
+  "these": "ROE au percentile 78.0, marge nette au percentile 34.0, croissance du CA au percentile 40.0.",
+  "risques": [
+   "endettement élevé"
+  ],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "ACN",
+  "agent": "sentiment",
+  "score": 1,
+  "these": "8 actualités : 4 positives, 1 négatives.",
+  "risques": [
+   "ACN misses revenue estimates as demand weakens"
+  ],
+  "sources": [
+   "ACN shares rally after strong quarterly revenue growth",
+   "ACN announces date for quarterly earnings call",
+   "ACN misses revenue estimates as demand weakens"
+  ]
+ },
+ {
+  "ticker": "ACN",
+  "agent": "valorisation",
+  "score": -2,
+  "these": "PER prévisionnel +41% vs médiane du secteur, EV/EBITDA +74%.",
+  "risques": [
+   "prime de valorisation"
+  ],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "ABT",
+  "agent": "fondamental",
+  "score": 1,
+  "these": "ROE au percentile 38.0, marge nette au percentile 72.0, croissance du CA au percentile 90.0.",
+  "risques": [
+   "endettement élevé"
+  ],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "ABT",
+  "agent": "sentiment",
+  "score": 1,
+  "these": "8 actualités : 4 positives, 2 négatives.",
+  "risques": [
+   "ABT shares fall after regulators open investigation",
+   "ABT misses revenue estimates as demand weakens"
+  ],
+  "sources": [
+   "ABT shares fall after regulators open investigation",
+   "ABT to present at upcoming industry conference",
+   "ABT announces record buyback and dividend increase"
+  ]
+ },
+ {
+  "ticker": "ABT",
+  "agent": "valorisation",
+  "score": -2,
+  "these": "PER prévisionnel +52% vs médiane du secteur, EV/EBITDA +108%.",
+  "risques": [
+   "prime de valorisation"
+  ],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "IBM",
+  "agent": "fondamental",
+  "score": -2,
+  "these": "ROE au percentile 8.0, marge nette au percentile 14.0, croissance du CA au percentile 22.0.",
+  "risques": [
+   "endettement élevé"
+  ],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "IBM",
+  "agent": "sentiment",
+  "score": 0,
+  "these": "8 actualités : 2 positives, 3 négatives.",
+  "risques": [
+   "IBM cuts outlook amid supply chain disruptions",
+   "IBM misses revenue estimates as demand weakens"
+  ],
+  "sources": [
+   "IBM beats earnings expectations, raises full-year guidance",
+   "IBM cuts outlook amid supply chain disruptions",
+   "IBM announces date for quarterly earnings call"
+  ]
+ },
+ {
+  "ticker": "IBM",
+  "agent": "valorisation",
+  "score": 1,
+  "these": "PER prévisionnel -6% vs médiane du secteur, EV/EBITDA -44%.",
+  "risques": [],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "GE",
+  "agent": "fondamental",
+  "score": -1,
+  "these": "ROE au percentile 26.0, marge nette au percentile 32.0, croissance du CA au percentile 32.0.",
+  "risques": [],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "GE",
+  "agent": "sentiment",
+  "score": 1,
+  "these": "8 actualités : 3 positives, 2 négatives.",
+  "risques": [
+   "Analysts downgrade GE on slowing growth and rising costs",
+   "Analysts downgrade GE on slowing growth and rising costs"
+  ],
+  "sources": [
+   "What to watch for GE this week",
+   "Analysts downgrade GE on slowing growth and rising costs",
+   "Analysts downgrade GE on slowing growth and rising costs"
+  ]
+ },
+ {
+  "ticker": "GE",
+  "agent": "valorisation",
+  "score": 0,
+  "these": "PER prévisionnel -39% vs médiane du secteur, EV/EBITDA -25%.",
+  "risques": [],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "LIN",
+  "agent": "fondamental",
+  "score": -1,
+  "these": "ROE au percentile 48.0, marge nette au percentile 46.0, croissance du CA au percentile 10.0.",
+  "risques": [
+   "endettement élevé"
+  ],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "LIN",
+  "agent": "sentiment",
+  "score": 0,
+  "these": "8 actualités : 2 positives, 3 négatives.",
+  "risques": [
+   "Analysts downgrade LIN on slowing growth and rising costs",
+   "LIN shares fall after regulators open investigation"
+  ],
+  "sources": [
+   "LIN announces record buyback and dividend increase",
+   "LIN announces date for quarterly earnings call",
+   "What to watch for LIN this week"
+  ]
+ },
+ {
+  "ticker": "LIN",
+  "agent": "valorisation",
+  "score": 0,
+  "these": "PER prévisionnel +0% vs médiane du secteur, EV/EBITDA +0%.",
+  "risques": [],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "AVGO",
+  "agent": "fondamental",
+  "score": -1,
+  "these": "ROE au percentile 58.0, marge nette au percentile 26.0, croissance du CA au percentile 26.0.",
+  "risques": [
+   "endettement élevé"
+  ],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "AVGO",
+  "agent": "sentiment",
+  "score": 2,
+  "these": "8 actualités : 6 positives, 0 négatives.",
+  "risques": [],
+  "sources": [
+   "AVGO announces record buyback and dividend increase",
+   "What to watch for AVGO this week",
+   "AVGO announces record buyback and dividend increase"
+  ]
+ },
+ {
+  "ticker": "AVGO",
+  "agent": "valorisation",
+  "score": -1,
+  "these": "PER prévisionnel +36% vs médiane du secteur, EV/EBITDA +18%.",
+  "risques": [
+   "prime de valorisation"
+  ],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "TXN",
+  "agent": "fondamental",
+  "score": -1,
+  "these": "ROE au percentile 14.0, marge nette au percentile 58.0, croissance du CA au percentile 36.0.",
+  "risques": [
+   "endettement élevé"
+  ],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "TXN",
+  "agent": "sentiment",
+  "score": 0,
+  "these": "8 actualités : 2 positives, 4 négatives.",
+  "risques": [
+   "Analysts downgrade TXN on slowing growth and rising costs",
+   "Analysts downgrade TXN on slowing growth and rising costs"
+  ],
+  "sources": [
+   "Analysts downgrade TXN on slowing growth and rising costs",
+   "Analysts downgrade TXN on slowing growth and rising costs",
+   "TXN to present at upcoming industry conference"
+  ]
+ },
+ {
+  "ticker": "TXN",
+  "agent": "valorisation",
+  "score": 0,
+  "these": "PER prévisionnel +17% vs médiane du secteur, EV/EBITDA -0%.",
+  "risques": [],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "AMZN",
+  "agent": "fondamental",
+  "score": -1,
+  "these": "ROE au percentile 36.0, marge nette au percentile 12.0, croissance du CA au percentile 4.0.",
+  "risques": [],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "AMZN",
+  "agent": "sentiment",
+  "score": 2,
+  "these": "8 actualités : 6 positives, 0 négatives.",
+  "risques": [],
+  "sources": [
+   "AMZN shares rally after strong quarterly revenue growth",
+   "AMZN beats earnings expectations, raises full-year guidance",
+   "AMZN announces record buyback and dividend increase"
+  ]
+ },
+ {
+  "ticker": "AMZN",
+  "agent": "valorisation",
+  "score": -2,
+  "these": "PER prévisionnel +9% vs médiane du secteur, EV/EBITDA +13%.",
+  "risques": [
+   "prime de valorisation"
+  ],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "UNH",
+  "agent": "fondamental",
+  "score": -1,
+  "these": "ROE au percentile 6.0, marge nette au percentile 92.0, croissance du CA au percentile 14.0.",
+  "risques": [
+   "endettement élevé"
+  ],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "UNH",
+  "agent": "sentiment",
+  "score": -1,
+  "these": "8 actualités : 1 positives, 3 négatives.",
+  "risques": [
+   "UNH shares fall after regulators open investigation",
+   "UNH cuts outlook amid supply chain disruptions"
+  ],
+  "sources": [
+   "UNH to present at upcoming industry conference",
+   "UNH announces record buyback and dividend increase",
+   "UNH shares fall after regulators open investigation"
+  ]
+ },
+ {
+  "ticker": "UNH",
+  "agent": "valorisation",
+  "score": 0,
+  "these": "PER prévisionnel +24% vs médiane du secteur, EV/EBITDA -13%.",
+  "risques": [],
+  "sources": [
+   "comparer_pairs"
+  ]
+ },
+ {
+  "ticker": "XOM",
+  "agent": "fondamental",
+  "score": -1,
+  "these": "ROE au percentile 34.0, marge nette au percentile 6.0, croissance du CA au percentile 28.0.",
+  "risques": [
+   "endettement élevé"
+  ],
+  "sources": [
+   "get_metriques_titre"
+  ]
+ },
+ {
+  "ticker": "XOM",
+  "agent": "sentiment",
+  "score": 1,
+  "these": "8 actualités : 5 positives, 2 négatives.",
+  "risques": [
+   "XOM shares fall after regulators open investigation",
+   "XOM misses revenue estimates as demand weakens"
+  ],
+  "sources": [
+   "XOM shares rally after strong quarterly revenue growth",
+   "Analysts upgrade XOM citing robust demand and margin expansion",
+   "XOM beats earnings expectations, raises full-year guidance"
+  ]
+ },
+ {
+  "ticker": "XOM",
+  "agent": "valorisation",
+  "score": 0,
+  "these": "PER prévisionnel +1% vs médiane du secteur, EV/EBITDA +57%.",
+  "risques": [],
+  "sources": [
+   "comparer_pairs"
+  ]
+ }
+]

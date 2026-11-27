@@ -1,0 +1,51 @@
+ticker,name,sector,industry
+AAPL,Apple Inc.,Information Technology,Technology Hardware & Equipment
+MSFT,Microsoft Corp.,Information Technology,Software
+NVDA,NVIDIA Corp.,Information Technology,Semiconductors
+AVGO,Broadcom Inc.,Information Technology,Semiconductors
+ORCL,Oracle Corp.,Information Technology,Software
+CRM,Salesforce Inc.,Information Technology,Software
+ADBE,Adobe Inc.,Information Technology,Software
+AMD,Advanced Micro Devices,Information Technology,Semiconductors
+CSCO,Cisco Systems,Information Technology,Communications Equipment
+ACN,Accenture plc,Information Technology,IT Services
+INTU,Intuit Inc.,Information Technology,Software
+TXN,Texas Instruments,Information Technology,Semiconductors
+QCOM,Qualcomm Inc.,Information Technology,Semiconductors
+IBM,International Business Machines,Information Technology,IT Services
+GOOGL,Alphabet Inc. (Class A),Communication Services,Interactive Media & Services
+META,Meta Platforms,Communication Services,Interactive Media & Services
+NFLX,Netflix Inc.,Communication Services,Entertainment
+DIS,Walt Disney Co.,Communication Services,Entertainment
+VZ,Verizon Communications,Communication Services,Diversified Telecommunication Services
+AMZN,Amazon.com Inc.,Consumer Discretionary,Broadline Retail
+TSLA,Tesla Inc.,Consumer Discretionary,Automobiles
+HD,Home Depot,Consumer Discretionary,Specialty Retail
+MCD,McDonald's Corp.,Consumer Discretionary,Hotels Restaurants & Leisure
+NKE,Nike Inc.,Consumer Discretionary,Textiles Apparel & Luxury Goods
+BRK-B,Berkshire Hathaway (Class B),Financials,Diversified Financial Services
+JPM,JPMorgan Chase & Co.,Financials,Banks
+V,Visa Inc.,Financials,Financial Services
+MA,Mastercard Inc.,Financials,Financial Services
+BAC,Bank of America,Financials,Banks
+WFC,Wells Fargo,Financials,Banks
+LLY,Eli Lilly and Co.,Health Care,Pharmaceuticals
+UNH,UnitedHealth Group,Health Care,Health Care Providers & Services
+JNJ,Johnson & Johnson,Health Care,Pharmaceuticals
+ABBV,AbbVie Inc.,Health Care,Biotechnology
+MRK,Merck & Co.,Health Care,Pharmaceuticals
+TMO,Thermo Fisher Scientific,Health Care,Life Sciences Tools & Services
+ABT,Abbott Laboratories,Health Care,Health Care Equipment & Supplies
+DHR,Danaher Corp.,Health Care,Life Sciences Tools & Services
+AMGN,Amgen Inc.,Health Care,Biotechnology
+PFE,Pfizer Inc.,Health Care,Pharmaceuticals
+PG,Procter & Gamble,Consumer Staples,Household Products
+COST,Costco Wholesale,Consumer Staples,Consumer Staples Distribution & Retail
+WMT,Walmart Inc.,Consumer Staples,Consumer Staples Distribution & Retail
+KO,Coca-Cola Co.,Consumer Staples,Beverages
+PEP,PepsiCo Inc.,Consumer Staples,Beverages
+XOM,Exxon Mobil,Energy,Oil Gas & Consumable Fuels
+CVX,Chevron Corp.,Energy,Oil Gas & Consumable Fuels
+LIN,Linde plc,Materials,Chemicals
+CAT,Caterpillar Inc.,Industrials,Machinery
+GE,GE Aerospace,Industrials,Aerospace & Defense

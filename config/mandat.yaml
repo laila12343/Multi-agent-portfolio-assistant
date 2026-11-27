@@ -1,0 +1,36 @@
+# =============================================================
+#  Mandat de gestion — lu par lire_mandat() dans le nœud charger_mandat
+#  Versionné avec le code : toute modification est tracée (H10).
+# =============================================================
+version: "2026-11-v1"
+nom: Mandat actions grandes capitalisations US — démonstration
+devise: USD
+valeur_portefeuille: 1000000
+
+indice_reference:              # H2, H4
+  nom: S&P 500 — 50 premières capitalisations
+  benchmark: SPY               # sert à mesurer le rendement ajusté du risque relatif (H4)
+
+objectif: maximiser le ratio de Sharpe par rapport à l'indice   # H4
+frequence: mensuelle                                              # H3
+
+contraintes:                   # H5
+  long_only: true              # pas de vente à découvert
+  poids_max_titre: 0.10
+  poids_min_ligne: 0.01        # chaque titre retenu par le comité reçoit au moins 1 %
+  poids_max_secteur: 0.30
+  liquidite_min_usd_jour: 50000000      # volume moyen échangé minimum
+  capitalisation_min_usd: 20000000000
+  lignes_min: 15
+
+exclusions:                    # filtrées dans construire_univers, avec motif
+  secteurs: []                 # ex. [Energy]
+  tickers: []                  # ex. [TSLA]
+
+limites_risque:                # vérifiées dans controle_risque
+  volatilite_annuelle_max: 0.20
+  var95_1j_max: 0.020          # perte journalière à 95 % (positive)
+  cvar95_1j_max: 0.030
+  rotation_max: 0.75           # 1/2 * somme |w_cible - w_actuel| (élevé : 1er cycle, 25 % de liquidités à investir)
+  concentration_top5_max: 0.45
+  perte_stress_max: 0.25       # pire scénario de stress
