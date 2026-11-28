@@ -31,7 +31,19 @@ st.set_page_config(page_title="Assistant multi-agent de portefeuille", page_icon
 st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Spectral:wght@500;600;700&family=Public+Sans:wght@400;500;600;700&display=swap');
-html, body, [class*="st-"], button, input, textarea { font-family: 'Public Sans', system-ui, sans-serif; }
+html, body, p, li, label, input, textarea, .stMarkdown, [data-testid="stWidgetLabel"] { font-family: 'Public Sans', system-ui, sans-serif; }
+/* les icônes de Streamlit sont une police : on la protège, sinon leur nom s'affiche en toutes lettres */
+[data-testid="stIconMaterial"], .material-symbols-rounded, span[class*="material-symbols"] { font-family: 'Material Symbols Rounded' !important; }
+.stAppDeployButton { display: none; }
+/* boutons de décision */
+.st-key-btn_valider button { background: #1BAF7A !important; color: #fff !important; border: 0 !important; font-size: 1.05rem !important; padding: .7rem 0 !important; }
+.st-key-btn_valider button:hover { background: #159465 !important; }
+.st-key-btn_rejeter button { background: #D64545 !important; color: #fff !important; border: 0 !important; font-size: 1.05rem !important; padding: .7rem 0 !important; }
+.st-key-btn_rejeter button:hover { background: #B83636 !important; }
+.st-key-btn_valider button:disabled, .st-key-btn_rejeter button:disabled { opacity: .45; }
+.st-key-btn_valider p, .st-key-btn_rejeter p { color: #fff !important; font-weight: 700; }
+.decision-faite { background: #fff; border: 1px solid #E6E9E4; border-radius: 14px; padding: 18px 20px; margin-bottom: 14px; }
+.decision-faite h3 { margin: 0 0 4px; }
 h1, h2, h3, h4 { font-family: 'Spectral', Georgia, serif !important; color: #0E3B43; }
 header[data-testid="stHeader"] { background: transparent; }
 .block-container { padding-top: 3.2rem; max-width: 1360px; }
@@ -151,6 +163,73 @@ def graphe(fig, key: str):
     st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": False}, key=key)
 
 
+# ================================================================== mandat saisi par l'utilisateur
+MANDAT_SAISI = ROOT / "data" / "cache" / "mandat_saisi.yaml"
+
+
+def editeur_mandat(ouvert: bool):
+    """Formulaire du mandat (valeurs en %). Renvoie le mandat complet, ou None s'il est incohérent."""
+    import yaml
+
+    base = lire_mandat(ROOT / "config" / "mandat.yaml")
+    base.pop("empreinte", None)
+    c, lim = base["contraintes"], base["limites_risque"]
+    univ = pd.read_csv(ROOT / "data" / "universe_sp50.csv")
+    secteurs = sorted(univ["sector"].unique(), key=secteur_fr)
+    with st.expander("📋 Mandat du client", expanded=ouvert):
+        nom = st.text_input("Nom du mandat", base["nom"], key="m_nom")
+        valeur = st.number_input("💰 Valeur du portefeuille (USD)", 10_000, 1_000_000_000, int(base["valeur_portefeuille"]), 50_000, key="m_val")
+        st.markdown("**Contraintes**")
+        a, b = st.columns(2)
+        p_titre = a.number_input("Max par titre (%)", 2.0, 50.0, c["poids_max_titre"] * 100, 0.5, key="m_pt")
+        p_sect = b.number_input("Max par secteur (%)", 5.0, 100.0, c["poids_max_secteur"] * 100, 1.0, key="m_ps")
+        p_min = a.number_input("Min par ligne (%)", 0.0, 5.0, c.get("poids_min_ligne", 0.0) * 100, 0.5, key="m_pm")
+        lignes = b.number_input("Lignes minimum", 3, 30, int(c.get("lignes_min", 15)), 1, key="m_lm")
+        liq = a.number_input("Liquidité min (M$/j)", 0, 5_000, int(c["liquidite_min_usd_jour"] / 1e6), 10, key="m_liq")
+        cap = b.number_input("Capitalisation min (Md$)", 0, 3_000, int(c["capitalisation_min_usd"] / 1e9), 5, key="m_cap")
+        st.markdown("**Limites de risque**")
+        a, b = st.columns(2)
+        vol = a.number_input("Volatilité max (%)", 5.0, 60.0, lim["volatilite_annuelle_max"] * 100, 1.0, key="m_vol")
+        var = b.number_input("VaR 95 % 1 j max (%)", 0.5, 10.0, lim["var95_1j_max"] * 100, 0.1, key="m_var")
+        cvar = a.number_input("CVaR 95 % 1 j max (%)", 0.5, 15.0, lim["cvar95_1j_max"] * 100, 0.1, key="m_cvar")
+        rot = b.number_input("Rotation max (%)", 5.0, 100.0, lim["rotation_max"] * 100, 5.0, key="m_rot")
+        top5 = a.number_input("Top 5 max (%)", 10.0, 100.0, lim["concentration_top5_max"] * 100, 1.0, key="m_top5")
+        stress = b.number_input("Perte de stress max (%)", 5.0, 80.0, lim["perte_stress_max"] * 100, 1.0, key="m_stress")
+        st.markdown("**Exclusions**")
+        ex_sect = st.multiselect("Secteurs exclus", secteurs, format_func=secteur_fr, key="m_exs")
+        ex_tick = st.multiselect("Titres exclus", sorted(univ["ticker"]), key="m_ext")
+
+        erreurs = []
+        if p_titre > p_sect:
+            erreurs.append("le maximum par titre dépasse le maximum par secteur")
+        if p_titre * 30 < 100:
+            erreurs.append(f"avec {p_titre:g} % max par titre, même 30 titres ne suffisent pas à investir 100 %")
+        if p_min * lignes > 100:
+            erreurs.append("le minimum par ligne multiplié par le nombre de lignes dépasse 100 %")
+        if cvar < var:
+            erreurs.append("la CVaR maximale doit être au moins égale à la VaR maximale")
+        for e in erreurs:
+            st.error(e.capitalize() + ".", icon="⚠️")
+    if erreurs:
+        return None
+    m = dict(base)
+    m.update(nom=nom, valeur_portefeuille=float(valeur), version=f"saisi-{date.today().isoformat()}")
+    m["contraintes"] = {**c, "poids_max_titre": p_titre / 100, "poids_max_secteur": p_sect / 100, "poids_min_ligne": p_min / 100,
+                        "lignes_min": int(lignes), "liquidite_min_usd_jour": liq * 1e6, "capitalisation_min_usd": cap * 1e9}
+    m["limites_risque"] = {**lim, "volatilite_annuelle_max": vol / 100, "var95_1j_max": var / 100, "cvar95_1j_max": cvar / 100,
+                           "rotation_max": rot / 100, "concentration_top5_max": top5 / 100, "perte_stress_max": stress / 100}
+    m["exclusions"] = {"secteurs": list(ex_sect), "tickers": list(ex_tick)}
+    return m
+
+
+def enregistrer_mandat(m: dict) -> str:
+    import yaml
+
+    MANDAT_SAISI.parent.mkdir(parents=True, exist_ok=True)
+    MANDAT_SAISI.write_text(yaml.safe_dump(m, allow_unicode=True, sort_keys=False), encoding="utf-8")
+    return str(MANDAT_SAISI)
+
+
 # ================================================================== barre latérale
 with st.sidebar:
     st.markdown("### 🚀 Nouveau cycle")
@@ -162,7 +241,9 @@ with st.sidebar:
     max_titres = st.slider("🔎 Titres confiés aux analystes", 5, 50, 15 if backend != "mock" else 30,
                            help="Chaque titre mobilise 3 agents : avec un vrai modèle, comptez environ 1 minute par titre.")
     d = st.date_input("📅 Date d'analyse", value=date.today(), max_value=date.today(), format="DD/MM/YYYY")
-    lancer = st.button("Lancer l'analyse", type="primary", use_container_width=True, icon=":material/rocket_launch:")
+    mandat_saisi = editeur_mandat(not st.session_state.get("cfg"))
+    lancer = st.button("Lancer l'analyse", type="primary", use_container_width=True, icon=":material/rocket_launch:",
+                       disabled=mandat_saisi is None)
     st.divider()
     st.markdown("### 🔍 Observabilité")
 
@@ -221,9 +302,18 @@ def executer(entree, etape: str, date_analyse: str | None = None):
     zone.empty()
 
 
-if lancer:
+if lancer and mandat_saisi:
+    ctx.settings["project"]["mandat_file"] = enregistrer_mandat(mandat_saisi)
     st.session_state.cfg = config_cycle(ctx)
     executer({"date_analyse": d.isoformat()}, "analyse", d.isoformat())
+
+# une décision du gérant est exécutée ici, en pleine largeur, puis la page est réaffichée proprement
+if st.session_state.get("decision_a_envoyer") and st.session_state.get("cfg"):
+    from langgraph.types import Command
+
+    dec = st.session_state.pop("decision_a_envoyer")
+    executer(Command(resume=dec), f"validation_{dec['decision']}")
+    st.rerun()
 
 cfg = st.session_state.get("cfg")
 etat = etat_cycle(app, cfg) if cfg else {}
@@ -266,15 +356,17 @@ if not cfg:
                        + ("Données simulées." if source == "synthetic" else "Données yfinance."))
     with dr:
         st.markdown("#### 📋 Le mandat en bref")
-        m = lire_mandat(ctx.settings["project"]["mandat_file"])
+        m = mandat_saisi or lire_mandat(ctx.settings["project"]["mandat_file"])
         c, lim = m["contraintes"], m["limites_risque"]
         st.markdown(f"""<div class="carte"><p style="margin-bottom:10px">{m['nom']}</p><div class="mandat">
 <span>🎯 {pct(c['poids_max_titre'], 0)} max par titre</span><span>🏢 {pct(c['poids_max_secteur'], 0)} max par secteur</span>
 <span>📉 VaR ≤ {pct(lim['var95_1j_max'], 1)} / jour</span><span>🌊 Volatilité ≤ {pct(lim['volatilite_annuelle_max'], 0)}</span>
-<span>🔄 Rotation ≤ {pct(lim['rotation_max'], 0)}</span><span>🚫 Pas de vente à découvert</span></div>
+<span>🔄 Rotation ≤ {pct(lim['rotation_max'], 0)}</span><span>🚫 Pas de vente à découvert</span>
+{''.join(f"<span>⛔ {secteur_fr(x)}</span>" for x in m.get('exclusions', {}).get('secteurs', []))}
+{''.join(f"<span>⛔ {x}</span>" for x in m.get('exclusions', {}).get('tickers', []))}</div>
 <p style="margin-top:8px">Valeur du portefeuille : <b>{f"{m['valeur_portefeuille']:,.0f}".replace(",", " ")} {m['devise']}</b></p></div>""",
                     unsafe_allow_html=True)
-        st.info("Choisissez le moteur et la date à gauche, puis cliquez sur **Lancer l'analyse**.", icon="👈")
+        st.info("Ajustez le mandat et choisissez le moteur dans le panneau de gauche, puis cliquez sur **Lancer l'analyse**.", icon="👈")
     st.stop()
 
 st.markdown(suivi_html(etat, "validation_gerant" if demande else None), unsafe_allow_html=True)
@@ -311,61 +403,66 @@ onglets = st.tabs([":material/how_to_reg: Décision", ":material/pie_chart: Allo
 with onglets[0]:
     rr = etat["rapport_risque"]
     if demande is None:
+        dg = etat.get("decision_gerant") or {}
         if decision == "rejete":
-            st.error(f"Proposition rejetée. Motif consigné : {etat['decision_gerant'].get('motif') or '—'}", icon="⛔")
+            st.markdown(f"""<div class="decision-faite"><h3>⛔ Proposition rejetée</h3>
+<p class="discret">Motif consigné au journal d'audit : {dg.get('motif') or '—'}</p></div>""", unsafe_allow_html=True)
         else:
-            st.success("Décision enregistrée : la note d'investissement est disponible dans son onglet.", icon="✅")
+            st.markdown(f"""<div class="decision-faite"><h3>✅ Proposition validée</h3>
+<p class="discret">{('Commentaire : ' + dg['motif']) if dg.get('motif') else 'Aucun commentaire.'}
+La note d'investissement est prête dans l'onglet « Note d'investissement ».</p></div>""", unsafe_allow_html=True)
+            ordres = pd.DataFrame(etat.get("ordres", []))
+            if not ordres.empty:
+                st.markdown("#### 🧾 Ordres à passer manuellement")
+                ordres["sens"] = ordres["sens"].map({"ACHAT": "🟢 Achat", "VENTE": "🔴 Vente"})
+                ordres["poids_cible"] = ordres["poids_cible"] * 100
+                st.dataframe(ordres, hide_index=True, use_container_width=True,
+                             column_config={"ticker": "Titre", "sens": "Sens", "quantite": st.column_config.NumberColumn("Quantité", format="%d"),
+                                            "prix_ref": st.column_config.NumberColumn("Cours", format="%.2f"),
+                                            "montant": st.column_config.NumberColumn("Montant (USD)", format="%.0f"),
+                                            "poids_cible": st.column_config.NumberColumn("Poids cible (%)", format="%.1f")})
     else:
         if demande["alerte"]:
             st.error("Limites de risque non tenues après trois tentatives : " + "; ".join(demande["problemes"])
-                     + ". Vous pouvez approuver en connaissance de cause, ajuster ou rejeter.", icon="🚨")
+                     + ". Vous pouvez valider en connaissance de cause ou rejeter.", icon="🚨")
         elif demande["conforme"]:
             st.success("La proposition respecte le mandat et toutes ses limites de risque. Elle attend votre décision.", icon="✅")
-        g, dr = st.columns([1.35, 1], gap="large")
+        with st.expander("🛡️ Lecture du risque par l'agent"):
+            st.write(rr["explication"])
+        g, dr = st.columns([1.6, 1], gap="large")
         with g:
             st.markdown("#### ✍️ Poids proposés")
-            st.caption("Modifiez la colonne « Poids (%) » pour ajuster ; le total est remis à 100 % à l'enregistrement.")
-            ed = alloc[["ticker", "nom", "secteur", "poids", "actuel", "vue", "confiance"]].copy()
+            st.caption("Vous pouvez modifier la colonne « Poids (%) » ; le total est remis à 100 %.")
+            ed = alloc[["ticker", "nom", "secteur", "poids", "vue", "confiance"]].copy()
             ed["poids"] = (ed["poids"] * 100).round(2)
-            ed["actuel"] = (ed["actuel"] * 100).round(2)
             ed["secteur"] = ed["secteur"].map(secteur_fr)
             ed["confiance"] = ed["confiance"].map(confiance_fr)
             modif = st.data_editor(
-                ed, hide_index=True, use_container_width=True, key="editeur", height=420,
-                disabled=["ticker", "nom", "secteur", "actuel", "vue", "confiance"],
+                ed, hide_index=True, use_container_width=True, key="editeur", height=430,
+                disabled=["ticker", "nom", "secteur", "vue", "confiance"],
                 column_config={"ticker": "Titre", "nom": "Société", "secteur": "Secteur",
                                "poids": st.column_config.NumberColumn("Poids (%)", min_value=0.0, max_value=100.0, step=0.1, format="%.2f"),
-                               "actuel": st.column_config.NumberColumn("Actuel (%)", format="%.2f"),
                                "vue": st.column_config.NumberColumn("Vue", format="%+d"), "confiance": "Confiance"})
-            total = modif["poids"].sum()
-            st.caption(f"Total saisi : {total:.2f} %".replace(".", ","))
+            st.caption(f"Total saisi : {modif['poids'].sum():.2f} %".replace(".", ","))
         with dr:
-            st.markdown("#### 🧭 Répartition sectorielle")
-            graphe(charts.fig_donut(expo), key="fig_donut_1")
-            st.markdown("#### 🛡️ Lecture du risque")
-            st.write(rr["explication"])
-            motif = st.text_area("💬 Votre commentaire", placeholder="Obligatoire pour ajuster ou rejeter ; consigné au journal d'audit.")
+            st.markdown("#### 💬 Votre décision")
             change = not modif["poids"].round(2).equals(ed["poids"].round(2))
-            if st.button("Approuver la proposition", type="primary", use_container_width=True, icon=":material/check_circle:"):
-                from langgraph.types import Command
-
-                executer(Command(resume={"decision": "approuve", "motif": motif}), "validation_approuve")
+            motif = st.text_area("Commentaire", height=150, label_visibility="collapsed",
+                                 placeholder="Votre commentaire (obligatoire pour rejeter), consigné au journal d'audit.")
+            if change:
+                st.info("Vous avez modifié des poids : « Valider » les renvoie au contrôle des risques avant la note.", icon="✏️")
+            b1, b2 = st.columns(2)
+            if b1.button("✓ Valider", key="btn_valider", use_container_width=True):
+                if change:
+                    nouveaux = {t: p / 100 for t, p in zip(modif["ticker"], modif["poids"]) if p > 0}
+                    st.session_state.decision_a_envoyer = {"decision": "modifie", "poids": nouveaux, "motif": motif or "ajustement des poids"}
+                else:
+                    st.session_state.decision_a_envoyer = {"decision": "approuve", "motif": motif}
                 st.rerun()
-            b2, b3 = st.columns(2)
-            if b2.button("Enregistrer les ajustements", use_container_width=True, icon=":material/edit:",
-                         disabled=not (motif and change), help="Modifiez au moins un poids et ajoutez un commentaire."):
-                from langgraph.types import Command
-
-                nouveaux = {t: p / 100 for t, p in zip(modif["ticker"], modif["poids"]) if p > 0}
-                executer(Command(resume={"decision": "modifie", "poids": nouveaux, "motif": motif}), "validation_modifie")
+            if b2.button("✕ Rejeter", key="btn_rejeter", use_container_width=True, disabled=not motif,
+                         help="Ajoutez un commentaire pour pouvoir rejeter."):
+                st.session_state.decision_a_envoyer = {"decision": "rejete", "motif": motif}
                 st.rerun()
-            if b3.button("Rejeter", use_container_width=True, icon=":material/cancel:", disabled=not motif):
-                from langgraph.types import Command
-
-                executer(Command(resume={"decision": "rejete", "motif": motif}), "validation_rejete")
-                st.rerun()
-    st.markdown("#### 🎛️ Limites du mandat")
-    graphe(charts.fig_jauges(tr), key="fig_jauges_1")
 
 # ------------------------------------------------------------------ allocation
 with onglets[1]:
